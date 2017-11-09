@@ -180,6 +180,9 @@
         if (_.keys(selectedModels).length === (collection.fullCollection|| collection).length) {
           this.checkbox().prop("checked", true);
         }
+        
+        model.trigger("backgrid:selectedChanged",model);
+
       });
 
       this.listenTo(collection.fullCollection || collection, "remove", function (model) {
